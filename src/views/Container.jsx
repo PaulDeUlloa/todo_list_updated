@@ -11,7 +11,27 @@ const Container = () =>{
         console.log (list);
     }
 
-    
+    const deleteTodo = (targetIdx) => {
+        const filteredList = todoList.filter(
+            (eachTodo, idx) => targetIdx !== idx)
+
+        setList(filteredList);
+    }
+
+    const updateTodo = (targetIdx, targetBool) => {
+        const updatedList = List.map(
+            (eachTodo, idx) => {
+                if (targetIdx === idx) {
+                    return { ...eachTodo, completed: targetBool }
+                } else {
+                    return eachTodo;
+                }
+            }
+        )
+        setList(updatedList);
+        }
+
+
     return (
         <div>
             <h1>User Todo List</h1>
