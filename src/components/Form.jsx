@@ -10,7 +10,10 @@ const TodoForm = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        
+        const newTask = { task, completed };
+        console.log(newTask);
+
+        props.addTask(newTask)
     }
 
 
