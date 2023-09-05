@@ -15,26 +15,26 @@ const List = (props) => {
             <table className="table">
                 <thead>
                     <tr>
-                        <th>Task</th>
-                        <th>Test</th>
+                        <th>Task |</th>
+                        <th>Delete Task |</th>
                         <th>Task Completed</th>
                     </tr>
                 </thead>
                 <tbody>
                     {
                         props.list.map((eachTodo, Idx) => {
-                                return (
-                                    <tr key={Idx} style={eachTodo.completed ? { backgroundColor: "#08e600" } : { backgroundColor: "#ffffff;" }}>
-                                        <td>{eachTodo.task}</td>
-                                        <td>
-                                            <button class="btn btn-danger" onClick={() => handleDelete(Idx)}>Delete</button>
-                                        </td>
-                                        <td>
-                                            <input type="checkbox" onChange={(e) => handleUpdate(Idx, e.target.checked)} />
-                                        </td>
-                                    </tr>
-                                )
-                            }
+                            return (
+                                <tr key={Idx} style={eachTodo.completed ? { backgroundColor: "#08e600" } : { backgroundColor: "#ffffff;" }}>
+                                    <td>{eachTodo.task}</td>
+                                    <td>
+                                        <button class="btn btn-danger" onClick={() => handleDelete(Idx)}>Delete</button>
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" onChange={(e) => handleUpdate(Idx, e.target.checked)} />
+                                    </td>
+                                </tr>
+                            )
+                        }
                         )
                     }
                 </tbody>

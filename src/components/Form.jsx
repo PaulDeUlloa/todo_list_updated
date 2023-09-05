@@ -13,11 +13,11 @@ const Form = (props) => {
         const newTask = { task, completed };
         console.log(newTask);
 
-        props.addTask(newTask)
+        props.addToDo(newTask)
     }
 
 
-    return(
+    return (
         <>
             <form onSubmit={handleSubmit}>
                 <div>
