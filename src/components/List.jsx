@@ -22,15 +22,15 @@ const List = (props) => {
                 </thead>
                 <tbody>
                     {
-                        props.list.map((eachTodo, Idx) => {
+                        props.taskList.map((eachTask, idx) => {
                             return (
-                                <tr key={Idx} style={eachTodo.completed ? { backgroundColor: "#08e600" } : { backgroundColor: "#ffffff;" }}>
-                                    <td>{eachTodo.task}</td>
+                                <tr key={idx} style={eachTask.completed ? { backgroundColor: "#08e600" } : { backgroundColor: "#ffffff;" }}>
+                                    <td>{eachTask.task}</td>
                                     <td>
-                                        <button class="btn btn-danger" onClick={() => handleDelete(Idx)}>Delete</button>
+                                        <button onClick={() => handleDelete(idx)}>Delete</button>
                                     </td>
                                     <td>
-                                        <input type="checkbox" onChange={(e) => handleUpdate(Idx, e.target.checked)} />
+                                        <input type="checkbox" onChange={(e) => handleUpdate(idx, e.target.checked)} />
                                     </td>
                                 </tr>
                             )
