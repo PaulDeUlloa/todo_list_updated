@@ -12,7 +12,7 @@ const List = (props) => {
 
     return (
         <div>
-            <table className="table">
+            <table border="3">
                 <thead>
                     <tr>
                         <th>Task |</th>

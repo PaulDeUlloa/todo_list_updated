@@ -10,7 +10,7 @@ const Form = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const newTask = { task, completed };
+        const newTask = { task, completed: false };
         console.log(newTask);
 
         props.addToDo(newTask)

@@ -4,27 +4,27 @@ import List from "../components/List";
 
 const Container = () => {
 
-    const [list, setList] = useState([]);
+    const [taskList, setList] = useState([]);
 
-    const addToDo = (newToDo) => {
-        setList([...list, newToDo])
-        console.log(list);
+    const addTask = (newTask) => {
+        setList([...taskList, newTask])
+        console.log(taskList);
     }
 
-    const deleteTodo = (targetIdx) => {
-        const filteredList = list.filter(
-            (eachTodo, Idx) => targetIdx !== Idx)
+    const deleteTask = (targetIdx) => {
+        const filteredList = taskList.filter(
+            (eachTask, idx) => targetIdx !== idx)
 
         setList(filteredList);
     }
 
-    const updateTodo = (targetIdx, targetBool) => {
-        const updatedList = list.map(
-            (eachTodo, Idx) => {
-                if (targetIdx === Idx) {
-                    return { ...eachTodo, completed: targetBool }
+    const updateTask = (targetIdx, targetBool) => {
+        const updatedList = taskList.map(
+            (eachTask, idx) => {
+                if (targetIdx === idx) {
+                    return { ...eachTask, completed: targetBool }
                 } else {
-                    return eachTodo;
+                    return eachTask;
                 }
             }
         )
@@ -35,8 +35,8 @@ const Container = () => {
     return (
         <div>
             <h1>User Todo List: </h1>
-            <Form addToDo={addToDo} />
-            <List list={list} deleteTodo={deleteTodo} updateTodo={updateTodo} />
+            <Form addTask={addTask} />
+            <List taskList={taskList} deleteTask={deleteTask} updateTask={updateTask} />
         </div>
     )
 }
